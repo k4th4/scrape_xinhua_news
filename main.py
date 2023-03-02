@@ -52,7 +52,13 @@ Function Logic:
                     result_list.append({'title': title, 'link': link, 'date_time': date_time})
     return result_list
 
-# example
-#today = dt.datetime.today()
-#scrape_xinhua_news (today, '中共')
+def main():
+  # example
+  today = dt.datetime.today()
+  scrape_xinhua_news (today, '中共')
+
+
+if __name__ == "__main__":
+    main()
+
 

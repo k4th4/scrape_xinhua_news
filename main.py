@@ -39,7 +39,7 @@ Function Logic:
     results = json_data['content']['results']
     if results:
       for result in results:
-         # get the title and link of the result
+         # get the title and link of the result, remove the html tags and &nbsp;
         title = re.sub(re.compile('<.*?>'), '', result['title']).replace('&nbsp;', ' ')
         link = result['url']
         # get the date of the result
@@ -53,8 +53,6 @@ Function Logic:
     return result_list
 
 # example
-today = dt.datetime.today()
-scrape_xinhua_news (today, '中共')
-#print(scrape_xinhua (today, '中共'))
+#today = dt.datetime.today()
+#scrape_xinhua_news (today, '中共')
 
-"--> [{'title': '中共代表团访问乌干达', 'link': 'http://www.news.cn/2023-03/02/c_1129409165.htm', 'date_time': datetime.datetime(2023, 3, 2, 0, 0)}, {'title': '中共代表团访问乌干达', 'link': 'http://m.news.cn/2023-03/02/c_1129409165.htm', 'date_time': datetime.datetime(2023, 3, 2, 0, 0)}, {'title': '中共代表团访问乌干达', 'link': 'http://www.news.cn/2023-03/02/c_1129409165.htm', 'date_time': datetime.datetime(2023, 3, 2, 0, 0)}, {'title': '中共代表团访问乌干达', 'link': 'http://www.news.cn/world/2023-03/02/c_1129409165.htm', 'date_time': datetime.datetime(2023, 3, 2, 0, 0)}]"

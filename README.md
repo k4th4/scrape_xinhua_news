@@ -1,4 +1,4 @@
-# scrape_xinhua Function
+# scrape_xinhua_news Function
 
 This repository contains a Python function called `scrape_xinhua` that scrapes the Xinhua News Agency website http://so.news.cn/ for news articles containing a specified search term published on a specified day. 
 
@@ -10,21 +10,19 @@ This repository contains a Python function called `scrape_xinhua` that scrapes t
 
 ```python
 import datetime as dt
-from scrape_xinhua import scrape_xinhua
+from scrape_xinhua_news import scrape_xinhua_news
 
-target_day = dt.datetime(2022, 3, 1) # search articles published on March 1, 2022
+target_day = dt.datetime(2023, 3, 2) # search articles published on March 2, 2023
 search_term = '中共' # search for articles containing the term "中共"
 
-results = scrape_xinhua(target_day, search_term)
+results = scrape_xinhua_news(target_day, search_term)
 
-for result in results:
-    print(result['title'])
-    print(result['link'])
-    print(result['date_time'])
+results = [{'title': '中共代表团访问乌干达', 'link': 'http://www.news.cn/2023-03/02/c_1129409165.htm', 'date_time': datetime.datetime(2023, 3, 2, 0, 0)}, {'title': '中共代表团访问乌干达', 'link': 'http://m.news.cn/2023-03/02/c_1129409165.htm', 'date_time': datetime.datetime(2023, 3, 2, 0, 0)}, {'title': '中共代表团访问乌干达', 'link': 'http://www.news.cn/2023-03/02/c_1129409165.htm', 'date_time': datetime.datetime(2023, 3, 2, 0, 0)}, {'title': '中共代表团访问乌干达', 'link': 'http://www.news.cn/world/2023-03/02/c_1129409165.htm', 'date_time': datetime.datetime(2023, 3, 2, 0, 0)}]
+
 ```
 
 ## Function inputs
-- target_day (dt.datetime): A datetime object representing the day on which to search for articles. The function will retrieve articles published on this day.
+- target_day (dt.datetime): A datetime object representing the day on which to search for articles on . The function will retrieve articles published on this day.
 - search_term (str): A string representing the search term to look for in article titles.
 
 ## Function outputs
@@ -39,4 +37,4 @@ for result in results:
 - urllib.parse module
 
 ## License
-This function is released under the MIT License. See LICENSE for details.
+This function is released under the MIT License.
